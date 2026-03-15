@@ -1,0 +1,140 @@
+:root {
+	--bg: #0b0b0f;
+	--panel: #14141d;
+	--accent1: #7a3cff;
+	--accent2: #b46cff;
+	--text: #f2f2f2;
+}
+
+body {
+	background: radial-gradient(circle at top, #1b0f33, #0b0b0f);
+	color: var(--text);
+	font-family: Segoe UI, Arial;
+	margin: 0;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1,
+h2 {
+	margin-top: 0;
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+	max-width: 420px;
+	margin: auto;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+button {
+	border: none;
+	padding: 8px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	color: white;
+	background: linear-gradient(45deg, var(--accent1), var(--accent2));
+	transition: 0.2s;
+}
+
+button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px var(--accent2);
+}
+
+.stream {
+	background: #0f0f17;
+	border-radius: 8px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.url,
+.command {
+	word-break: break-all;
+	font-family: monospace;
+	margin-bottom: 6px;
+	text-align: left;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.copy-indicator {
+	background: #1bbf5c;
+	color: white;
+	font-size: 12px;
+	padding: 3px 8px;
+	border-radius: 6px;
+	opacity: 0;
+	transform: translateX(-5px);
+	transition: all 0.25s ease;
+	white-space: nowrap;
+}
+
+.copy-indicator.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+input {
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	border: none;
+	background: #0f0f17;
+	color: white;
+	font-family: monospace;
+	margin-top: 8px;
+}
+
+.label {
+	margin-top: 10px;
+	opacity: 0.9;
+}
+
+.footer {
+	margin-top: 15px;
+	text-align: center;
+	opacity: 0.6;
+	font-size: 12px;
+}
+
+/* scrollbar */
+#streams::-webkit-scrollbar {
+	width: 8px;
+}
+
+#streams::-webkit-scrollbar-thumb {
+	background: linear-gradient(var(--accent1),
+			var(--accent2));
+	border-radius: 10px;
+}
+
+
+/* popup specific */
+body.popup {
+	width: 420px;
+	min-width: 420px;
+	height: auto;
+	display: block;
+}
+
+#streams {
+	max-height: 300px;
+	overflow-y: auto;
+	margin-top: 10px;
+}
